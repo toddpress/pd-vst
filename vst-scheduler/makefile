@@ -3,7 +3,7 @@
 #	make PDDIR=<path/to/pd>
 # or you can specify it below:
 
-PDDIR=
+PDDIR=../build/Release64/.pd/
 
 WINARCH := $(shell $(CC) -dumpmachine)
 
@@ -18,3 +18,4 @@ ALL: vstschedlib.c
 	-shared -L$(PDDIR)bin -l:pd.dll -o vstschedlib.dll
 	strip vstschedlib.dll
 	cp vstschedlib.dll ../build/pd-scheduler$(arch)/vstschedlib.dll
+	cp vstschedlib.dll ../build/Release64/.pd/bin/vstschedlib.dll

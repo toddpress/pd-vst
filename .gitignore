@@ -7,3 +7,7 @@ vstsdk2.4
 # binaries
 
 *.dll
+
+# files
+
+build/Release64/pdvstdebug.txt
