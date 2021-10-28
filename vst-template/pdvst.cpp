@@ -1067,7 +1067,7 @@ void pdvst::updatePdvstParameters()
                     setParameterAutomated(i,
                                           pdvstData->vstParameters[i].value.floatData);
                     //endEdit(i);
-//l                    updateDisplay ();
+//l                    updateDisplay ();  // I have commented this because it breaks sliders, numbox, etc. If this is on it jumps to max when first clicking on sliders, etc.
                 }
                 pdvstData->vstParameters[i].updated = 0;
             }
