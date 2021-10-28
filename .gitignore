@@ -1,0 +1,9 @@
+# folders
+
+build/Release32/.pd
+build/Release64/.pd
+vstsdk2.4
+
+# binaries
+
+*.dll
