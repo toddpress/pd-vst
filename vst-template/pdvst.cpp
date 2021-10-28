@@ -1067,7 +1067,7 @@ void pdvst::updatePdvstParameters()
                     setParameterAutomated(i,
                                           pdvstData->vstParameters[i].value.floatData);
                     //endEdit(i);
-                    updateDisplay ();
+//l                    updateDisplay ();
                 }
                 pdvstData->vstParameters[i].updated = 0;
             }
