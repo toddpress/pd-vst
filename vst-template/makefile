@@ -22,7 +22,7 @@ $(empty)
 
 WINARCH := $(shell $(CC) -dumpmachine)
 
-ifeq (i686% , $(WINARCH))
+ifneq (,$(findstring i686,$(WINARCH)))
 	arch = 32
 else
 	arch = 64
@@ -33,7 +33,7 @@ ALL: $(SOURCES)
 	g++ -Wall -I. -I$(FOO) -I$(FOO2) \
 	$(SOURCES) -static-libgcc -static-libstdc++ -static -lpthread -shared -o pdvst-template.dll
 	strip pdvst-template.dll
-	cp pdvst-template.dll ../build/Release$(arch)/.template/pdvst-template.dll
+	cp pdvst-template.dll ../build/Release$(arch)/pdvst-template.dll
 	cp pdvst-template.dll ../build/Release$(arch)/Pd_Gain.dll
 	cp pdvst-template.dll ../build/Release$(arch)/Pd_Gain-gui.dll
 	cp pdvst-template.dll ../build/Release$(arch)/Pd_Gain-nogui.dll

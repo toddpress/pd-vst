@@ -7,7 +7,7 @@ PDDIR=../build/Release64/.pd/
 
 WINARCH := $(shell $(CC) -dumpmachine)
 
-ifeq (i686% , $(WINARCH))
+ifneq (,$(findstring i686,$(WINARCH)))
 	arch = 32
 else
 	arch = 64
@@ -18,4 +18,4 @@ ALL: vstschedlib.c
 	-shared -L$(PDDIR)bin -l:pd.dll -o vstschedlib.dll
 	strip vstschedlib.dll
 	cp vstschedlib.dll ../build/pd-scheduler$(arch)/vstschedlib.dll
-	cp vstschedlib.dll ../build/Release$(arch)/.pd/bin/vstschedlib.dll
+	#cp vstschedlib.dll ../build/Release$(arch)/.pd/bin/vstschedlib.dll
